@@ -1,0 +1,6 @@
+<h2>Regions</h2>
+<hr />
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let region of regions"><a [routerLink]="['/region', region.id]">{{ region.name }}</a></li>
+</ul>
