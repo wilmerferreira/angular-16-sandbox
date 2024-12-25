@@ -10,6 +10,7 @@ import { RegionComponent } from './components/region/region.component';
 import { ErrorComponent } from './components/error/error.component';
 import { EstablishmentsComponent } from './components/establishments/establishments.component';
 import { EstablishmentComponent } from './components/establishment/establishment.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EstablishmentComponent } from './components/establishment/establishment
     RegionComponent,
     ErrorComponent,
     EstablishmentsComponent,
-    EstablishmentComponent
+    EstablishmentComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

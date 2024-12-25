@@ -7,8 +7,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ErrorComponent } from './components/error/error.component';
 import { EstablishmentsComponent } from './components/establishments/establishments.component';
 import { EstablishmentComponent } from './components/establishment/establishment.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
+  { path: '', component: DashboardComponent },
   { path: 'establishments', component: EstablishmentsComponent },
   { path: 'establishment/:id', component: EstablishmentComponent },
   { path: 'regions', component: RegionsComponent },
