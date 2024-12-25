@@ -1,0 +1,117 @@
+<h2>Establishment</h2>
+<hr />
+
+<form *ngIf="establishment">
+  <div class="mb-6">
+    <label for="businessName" class="form-label">Business name</label>
+    <input type="text" id="businessName" class="form-control" [value]="establishment.BusinessName" readonly />
+  </div>
+  <div class="mb-6" *ngIf="establishment.Phone">
+    <label for="phone" class="form-label">Phone</label>
+    <input type="text" id="phone" class="form-control" [value]="establishment.Phone" readonly />
+  </div>
+  <div class="mb-6">
+    <label for="businessType" class="form-label">Business type</label>
+    <div class="form-control">
+      <a [routerLink]="['/business-type', establishment.BusinessTypeID]">{{ establishment.BusinessType }}</a>
+    </div>
+  </div>
+</form>
+
+<h3 class="mt-4">Rating</h3>
+<hr />
+
+<form *ngIf="establishment">
+  <div class="mb-6">
+    <label for="schemeType" class="form-label">Scheme Type</label>
+    <input type="text" id="schemeType" class="form-control" [value]="establishment.SchemeType" readonly />
+  </div>
+  <div class="mb-6">
+    <label for="ratingValue" class="form-label">Rating value</label>
+    <input type="text" id="schemeType" class="form-control" [value]="establishment.RatingValue" readonly />
+  </div>
+  <div class="mb-6">
+    <label for="ratingKey" class="form-label">Rating key</label>
+    <input type="text" id="ratingKey" class="form-control" [value]="establishment.RatingKey" readonly />
+  </div>
+  <div class="mb-6">
+    <label for="ratingDate" class="form-label">Rating date</label>
+    <input type="text" id="ratingDate" class="form-control" [value]="establishment.RatingDate" readonly />
+  </div>
+  <div class="mb-6 form-check">
+    <input type="checkbox" id="newRatingPending" class="form-check-input" [checked]="establishment.NewRatingPending" disabled />
+    <label for="newRatingPending" class="form-check-label">New rating pending</label>
+  </div>
+  <div class="mb-6">
+    <label for="hygieneScore" class="form-label">Hygiene score</label>
+    <input type="text" id="hygieneScore" class="form-control" [value]="establishment.scores.Hygiene" readonly />
+  </div>
+  <div class="mb-6">
+    <label for="structuralScore" class="form-label">Structural score</label>
+    <input type="text" id="structuralScore" class="form-control" [value]="establishment.scores.Structural" readonly />
+  </div>
+  <div class="mb-6">
+    <label for="confidenceInManagement" class="form-label">Confidence in management score</label>
+    <input type="text" id="confidenceInManagement" class="form-control" [value]="establishment.scores.ConfidenceInManagement" readonly />
+  </div>
+</form>
+
+<h3 class="mt-4">Address</h3>
+<hr />
+
+<form *ngIf="establishment">
+  <div class="mb-6">
+    <label for="addressLine1" class="form-label">Address line 1</label>
+    <input type="text" id="addressLine1" class="form-control" [value]="establishment.AddressLine1" readonly />
+  </div>
+  <div class="mb-6">
+    <label for="addressLine2" class="form-label">Address line 2</label>
+    <input type="text" id="addressLine2" class="form-control" [value]="establishment.AddressLine2" readonly />
+  </div>
+  <div class="mb-6">
+    <label for="addressLine3" class="form-label">Address line 3</label>
+    <input type="text" id="addressLine3" class="form-control" [value]="establishment.AddressLine3" readonly />
+  </div>
+  <div class="mb-6">
+    <label for="addressLine4" class="form-label">Address line 4</label>
+    <input type="text" id="addressLine4" class="form-control" [value]="establishment.AddressLine4" readonly />
+  </div>
+  <div class="mb-6">
+    <label for="postCode" class="form-label">Postcode</label>
+    <input type="text" id="postCode" class="form-control" [value]="establishment.PostCode" readonly />
+  </div>
+  <div class="mb-6" *ngIf="establishment?.geocode?.latitude">
+    <label for="geocode" class="form-label">Geocode</label>
+    <div class="form-control">
+      <a [href]="mapLink(establishment.geocode)">{{ establishment.geocode.latitude }}, {{ establishment.geocode.longitude }}</a>
+    </div>
+  </div>
+</form>
+
+<h3 class="mt-4">Local Authority</h3>
+<hr />
+
+<form *ngIf="establishment">
+  <div class="mb-6">
+    <label for="localAuthorityName" class="form-label">Name</label>
+    <div class="form-control">
+      <a [routerLink]="['/authority', establishment.LocalAuthorityCode]">{{ establishment.LocalAuthorityName }}</a>
+    </div>
+  </div>
+  <div class="mb-6">
+    <label for="localAuthorityBusinessID" class="form-label">Business ID</label>
+    <input type="text" id="localAuthorityBusinessID" class="form-control" [value]="establishment.LocalAuthorityBusinessID" readonly />
+  </div>
+  <div class="mb-6">
+    <label for="localAuthorityWebSite" class="form-label">WebSite</label>
+    <div class="form-control">
+      <a [href]="establishment.LocalAuthorityWebSite">{{ establishment.LocalAuthorityWebSite }}</a>
+    </div>
+  </div>
+  <div class="mb-6">
+    <label for="localAuthorityEmailAddress" class="form-label">Email</label>
+    <div class="form-control">
+      <a [href]="mailTo(establishment.LocalAuthorityEmailAddress)">{{ establishment.LocalAuthorityEmailAddress }}</a>
+    </div>
+  </div>
+</form>

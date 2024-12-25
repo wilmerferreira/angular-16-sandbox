@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { catchError, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 import { Region, RegionService } from 'src/app/services/region.service';
 

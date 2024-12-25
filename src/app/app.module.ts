@@ -8,6 +8,8 @@ import { RegionsComponent } from './components/regions/regions.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RegionComponent } from './components/region/region.component';
 import { ErrorComponent } from './components/error/error.component';
+import { EstablishmentsComponent } from './components/establishments/establishments.component';
+import { EstablishmentComponent } from './components/establishment/establishment.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ErrorComponent } from './components/error/error.component';
     RegionsComponent,
     NotFoundComponent,
     RegionComponent,
-    ErrorComponent
+    ErrorComponent,
+    EstablishmentsComponent,
+    EstablishmentComponent
   ],
   imports: [
     BrowserModule,
